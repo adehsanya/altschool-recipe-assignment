@@ -16,14 +16,25 @@ body {
     padding: 1.5rem;
 }
 
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.header p {
+    margin: 0.5rem 0 0 0;
+}
+
 /* === RECIPE DETAILS SECTION === */
 .recipe-details {
     background: white;
     width: 80%;
+    max-width: 900px;
     margin: 1.5rem auto;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
 }
 
 .recipe-details ul {
@@ -42,8 +53,8 @@ body {
 }
 
 .image-section img {
-    width: 350px;
-    height: 250px;
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     border: 3px solid #d35400;
     transition: transform 0.3s ease;
@@ -59,6 +70,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 85%;
+    max-width: 1200px;
     margin: 2rem auto;
 }
 
@@ -67,10 +79,21 @@ body {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.07);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .layout-grid h2 {
     color: #d35400;
+    font-size: 1.5rem;
+}
+
+.ingredients ul, .instructions ol {
+    padding-left: 1.5rem;
+}
+
+.ingredients li, .instructions li {
+    margin-bottom: 0.5rem;
 }
 
 /* === FOOTER === */
@@ -80,4 +103,34 @@ body {
     color: white;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+    /* Stack grid vertically on mobile */
+    .layout-grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+    
+    /* Adjust widths for mobile */
+    .recipe-details {
+        width: 90%;
+        padding: 0.75rem;
+    }
+    
+    /* Smaller header text on mobile */
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust image for mobile */
+    .image-section img {
+        width: 100%;
+        height: auto;
+    }
 }
